@@ -15,7 +15,7 @@ const CONFIG = {
   projects: [
     {
       name: `The Word of Maz`,
-      href: "https://github.com/Mazetta/mazetta.github.io/",
+      href: "https://github.com/Mazetta/mazeriio.net/",
     },
   ],
   // blog setting (required)
