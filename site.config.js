@@ -14,13 +14,13 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Word of Maz`,
+      name: `The Word of Maz`,
       href: "https://github.com/Mazetta/mazetta.github.io/",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "Word of Maz",
+    title: "The Word of Maz",
     description: "Everything you need to know about myself!",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
