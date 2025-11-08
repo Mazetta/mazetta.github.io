@@ -19,14 +19,14 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       <meta name="description" content={props.description} />
       {/* og */}
       <meta property="og:type" content={props.type} />
-      <meta property="og:title" content="test" />
-      <meta property="og:description" content="test" />
-      <meta property="og:url" content="mazeriio.net" />
+      <meta property="og:title" content={props.title} />
+      <meta property="og:description" content={props.description} />
+      <meta property="og:url" content={props.url} />
       {CONFIG.lang && <meta property="og:locale" content={CONFIG.lang} />}
       {props.image && <meta property="og:image" content={props.image} />}
       {/* twitter */}
       <meta name="twitter:title" content={props.title} />
-      <meta name="twitter:description" content="test" />
+      <meta name="twitter:description" content={props.description} />
       <meta name="twitter:card" content="summary_large_image" />
       {props.image && <meta name="twitter:image" content={props.image} />}
       {/* post */}
