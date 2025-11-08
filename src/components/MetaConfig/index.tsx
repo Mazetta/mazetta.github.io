@@ -18,8 +18,8 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       <meta charSet="UTF-8" />
       <meta name="description" content={props.description} />
       <meta content="website" property="og:type" />
-      <meta content="The Word of Maz" property="og:title" />
-      <meta content="Everything you need to know about myself." property="og:description"/>
+      <meta content={props.title} property="og:title" />
+      <meta content={props.description} property="og:description"/>
       <meta content="https://www.mazeriio.net" property="og:url" />
       <meta content="https://www.mazeriio.net/icon-128.png" property="og:image"/>
       <meta content="mazeriio.net" property="og:site_name"/>
