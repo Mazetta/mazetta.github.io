@@ -17,6 +17,8 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       <meta name="description" content={props.description} />
+      
+      {/* OpenGraph */}
       <meta content="website" property="og:type" />
       <meta content={props.title} property="og:title" />
       <meta content={props.description} property="og:description"/>
@@ -25,7 +27,7 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       <meta content="mazeriio.net" property="og:site_name"/>
       <meta content="#abd454" name="theme-color"/>
 
-      {/* post */}
+      {/* Post */}
       {props.type === "Post" && (
         <>
           <meta property="article:published_time" content={props.date} />
