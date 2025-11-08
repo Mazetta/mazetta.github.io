@@ -27,7 +27,7 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       {/* twitter */}
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={props.description} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="https://www.mazeriio.net/mazeriio.png" />
       {props.image && <meta name="twitter:image" content="https://www.mazeriio.net/mazeriio.png" />}
       {/* post */}
       {props.type === "Post" && (
