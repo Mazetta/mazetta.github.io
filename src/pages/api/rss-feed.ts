@@ -10,6 +10,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const siteUrl = CONFIG.link || "https://www.mazeriio.net"
 
+    const filteredPosts = posts.filter(
+      (post: any) =>
+        post.status === "Public" || post.status === "Public on detail"
+    )
+
     const feed = new RSS({
       title: CONFIG.blog.title || "Mazeriio.net",
       description: CONFIG.blog.description || "Flux RSS du blog Mazeriio.net",
@@ -18,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       language: "fr",
     })
 
-    for (const post of posts) {
+    for (const post of filteredPosts) {
       feed.item({
         title: post.title,
         description: post.summary ?? "",
