@@ -1,54 +1,39 @@
-import { CONFIG } from "site.config"
-import { useEffect } from "react"
-import styled from "@emotion/styled"
-import useScheme from "src/hooks/useScheme"
-import { useRouter } from "next/router"
+import { useEffect, useRef } from "react"
 
-//TODO: useRef?
-
-type Props = {
-  issueTerm: string
-}
-
-const Utterances: React.FC<Props> = ({ issueTerm }) => {
-  const [scheme] = useScheme()
-  const router = useRouter()
+const Utterances = () => {
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const theme = `github-${scheme}`
     const script = document.createElement("script")
-    const anchor = document.getElementById("comments")
-    if (!anchor) return
+    script.src = "https://utteranc.es/client.js"
+    script.async = true
+    script.crossOrigin = "anonymous"
 
-    script.setAttribute("src", "https://utteranc.es/client.js")
-    script.setAttribute("crossorigin", "anonymous")
-    script.setAttribute("async", `true`)
-    script.setAttribute("issue-term", "og:title")
-    script.setAttribute("theme", theme)
-    script.setAttribute("label", "💬 Utterances")
+    // Ton repo public pour les commentaires :
     script.setAttribute("repo", "Mazetta/mazeriio.net")
-    const config: Record<string, string> = CONFIG.utterances.config
-    Object.keys(config).forEach((key) => {
-      script.setAttribute(key, config[key])
-    })
-    anchor.appendChild(script)
-    return () => {
-      anchor.innerHTML = ""
+    script.setAttribute("issue-term", "pathname")
+    script.setAttribute("label", "💬 Utterances")
+
+    // Détection auto du thème clair/sombre
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    script.setAttribute("theme", prefersDark ? "github-dark" : "github-light")
+
+    // Ajout du script dans le DOM
+    if (ref.current) {
+      ref.current.innerHTML = ""
+      ref.current.appendChild(script)
     }
-  }, [scheme, router])
+  }, [])
+
   return (
-    <>
-      <StyledWrapper id="comments">
-        <div className="utterances-frame"></div>
-      </StyledWrapper>
-    </>
+    <div
+      ref={ref}
+      style={{
+        marginTop: "2rem",
+        width: "100%",
+      }}
+    />
   )
 }
 
 export default Utterances
-
-const StyledWrapper = styled.div`
-  @media (min-width: 768px) {
-    margin-left: -4rem;
-  }
-`
