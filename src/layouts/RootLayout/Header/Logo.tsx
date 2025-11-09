@@ -15,5 +15,9 @@ const Logo = () => {
 }
 
 export default Logo
-const IconWrapper = styled.span``
+const IconWrapper = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`
 const StyledWrapper = styled(Link)``
