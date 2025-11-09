@@ -11,6 +11,7 @@ const CONFIG = {
     bluesky: "@mazeriio.net",
     linkedin: "",
     instagram: "",
+    rss: "https://www.mazeriio.net/api/rss.xml",
   },
   projects: [
     {

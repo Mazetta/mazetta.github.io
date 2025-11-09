@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { config } from "process"
 import React from "react"
 import {
   AiFillLinkedin,
@@ -55,6 +56,16 @@ const ContactCard: React.FC = () => {
           >
             <AiFillLinkedin className="icon" />
             <div className="name">LinkedIn</div>
+          </a>
+        )}
+        {CONFIG.profile.rss && (
+          <a
+            href={`${CONFIG.profile.rss}`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <AiFillLinkedin className="icon" />
+            <div className="name">RSS</div>
           </a>
         )}
       </StyledWrapper>

@@ -9,7 +9,7 @@ const ServiceCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        <Emoji>🌐</Emoji> API
+        <Emoji>🌐</Emoji> API 
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
