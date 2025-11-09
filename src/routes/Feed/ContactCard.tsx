@@ -13,9 +13,6 @@ import { Emoji } from "src/components/Emoji"
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>
-        <Emoji>📲</Emoji> Follow Me
-      </StyledTitle>
       <StyledWrapper>
       {CONFIG.profile.rss && (
           <a
@@ -60,7 +57,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.youtube && (
           <a
-            href={`https://www.youtube.com/${CONFIG.profile.bluesky}`}
+            href={`https://www.youtube.com/${CONFIG.profile.youtube}`}
             rel="noreferrer"
             target="_blank"
           >
