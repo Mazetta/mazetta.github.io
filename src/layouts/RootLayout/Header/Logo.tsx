@@ -6,11 +6,14 @@ import styled from "@emotion/styled"
 const Logo = () => {
   return (
     <StyledWrapper href="/" aria-label={CONFIG.blog.title}>
-      <Image src={CONFIG.blog.icon} fill alt="" /> {CONFIG.blog.title}
+      <IconWrapper>
+        <Image src={CONFIG.blog.icon} fill alt="" width={32} height={32} />
+      </IconWrapper> 
+      {CONFIG.blog.title}
     </StyledWrapper>
   )
 }
 
 export default Logo
-
+const IconWrapper = styled.span``
 const StyledWrapper = styled(Link)``
