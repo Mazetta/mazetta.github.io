@@ -6,6 +6,8 @@ import { DEFAULT_CATEGORY } from "src/constants"
 import styled from "@emotion/styled"
 import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
 
+const MdExpandMoreIcon = MdExpandMore as unknown as React.ComponentType<any>
+
 type Props = {}
 
 const CategorySelect: React.FC<Props> = () => {
@@ -26,7 +28,7 @@ const CategorySelect: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div ref={dropdownRef} className="wrapper" onClick={handleOpen}>
-        {currentCategory} Posts <MdExpandMore />
+        {currentCategory} Posts <MdExpandMoreIcon />
       </div>
       {opened && (
         <div className="content">
