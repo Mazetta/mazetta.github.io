@@ -14,8 +14,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `RSS Feed API`,
-      href: "https://www.mazeriio.net/api/rss-feed",
+      name: `Subscribe`,
+      href: "https://www.mazeriio.net/api/rss.xml",
     },
   ],
   // blog setting (required)
