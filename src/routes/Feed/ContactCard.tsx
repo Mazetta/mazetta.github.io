@@ -6,7 +6,7 @@ import { Emoji } from "src/components/Emoji"
 
 const FaEnvelopeIcon = FaEnvelope as unknown as React.ComponentType<any>
 const FaBlueskyIcon = FaBluesky as unknown as React.ComponentType<any>
-const FaXTwitterIcon = FaEnvelope as unknown as React.ComponentType<any>
+const FaXTwitterIcon = FaXTwitter as unknown as React.ComponentType<any>
 const FaRssIcon = FaRss as unknown as React.ComponentType<any>
 const FaYoutubeIcon = FaYoutube as unknown as React.ComponentType<any>
 const FaGithubIcon = FaGithub as unknown as React.ComponentType<any>
