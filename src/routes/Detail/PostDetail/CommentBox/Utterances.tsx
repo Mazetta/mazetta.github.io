@@ -9,7 +9,7 @@ function Utterances() {
   const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const scriptElement = document.createElement('script');
-    const theme = `github-${scheme}`
+    const theme = useScheme();
     scriptElement.async = true;
     scriptElement.crossOrigin = 'anonymous';
     scriptElement.src = 'https://utteranc.es/client.js';
