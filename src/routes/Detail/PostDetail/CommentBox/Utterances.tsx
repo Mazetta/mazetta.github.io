@@ -6,11 +6,7 @@ import { useRouter } from "next/router"
 
 //TODO: useRef?
 
-type Props = {
-  issueTerm: string
-}
-
-const Utterances: React.FC<Props> = ({ issueTerm }) => {
+const Utterances: React.FC = () => {
   const [scheme] = useScheme()
   const router = useRouter()
 
