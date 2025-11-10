@@ -26,7 +26,7 @@ const PostDetail: React.FC<Props> = () => {
 
   const category = (data.category && data.category?.[0]) || undefined
   const postUrl = `${typeof window !== "undefined" ? window.location.href : ""}`
-  const title = data.title || "Partager cet article"
+  const title = data.title || "The Word of Maz"
 
   return (
     <StyledWrapper>
@@ -45,7 +45,7 @@ const PostDetail: React.FC<Props> = () => {
 
         <ShareSection>
 
-          <BlueskyShareButton url={postUrl}>
+          <BlueskyShareButton url={postUrl} title={title}>
             <BlueskyIcon size={24} round />
           </BlueskyShareButton>
 
@@ -57,7 +57,7 @@ const PostDetail: React.FC<Props> = () => {
             <ThreadsIcon size={24} round />
           </ThreadsShareButton>
           
-          <EmailShareButton url={postUrl} title={title}>
+          <EmailShareButton url={postUrl} subject={title}>
             <EmailIcon size={24} round />
           </EmailShareButton>
 
