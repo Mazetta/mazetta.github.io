@@ -1,35 +1,26 @@
-import { useEffect, useRef } from "react"
-
-const Utterances = () => {
-  const ref = useRef<HTMLDivElement>(null)
-
+function Utterances() {
+  const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://utteranc.es/client.js"
-    script.async = true
-    script.crossOrigin = "anonymous"
+    const scriptElement = document.createElement('script');
+    scriptElement.async = true;
+    scriptElement.crossOrigin = 'anonymous';
+    scriptElement.src = 'https://utteranc.es/client.js';
 
-    // Ton repo public pour les commentaires :
-    script.setAttribute("repo", "Mazetta/mazeriio.net")
-    script.setAttribute("issue-term", "pathname")
-    script.setAttribute("label", "💬 Utterances")
+    scriptElement.setAttribute('issue-term', 'pathname');
+    scriptElement.setAttribute('label', 'comment');
+    scriptElement.setAttribute(
+      'repo',
+      'Mazetta/mazeriio.net',
+    );
+    scriptElement.setAttribute(
+      'theme',
+      'preferred-color-scheme',
+    );
 
-    // Détection auto du thème clair/sombre
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    script.setAttribute("theme", prefersDark ? "github-dark" : "github-light")
+    ref.current?.appendChild(scriptElement);
+  }, []);
 
-    // Ajout du script dans le DOM
-    if (ref.current) {
-      ref.current.innerHTML = ""
-      ref.current.appendChild(script)
-    }
-  }, [])
-
-  return (
-    <div
-      ref={ref}
-    />
-  )
+  return <div ref={ref} />;
 }
 
-export default Utterances
+export default Utterances;
