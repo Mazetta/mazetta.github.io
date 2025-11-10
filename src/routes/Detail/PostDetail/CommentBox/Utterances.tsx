@@ -6,7 +6,11 @@ import { useRouter } from "next/router"
 
 //TODO: useRef?
 
-const Utterances: React.FC = () => {
+type Props = {
+  issueTerm: string
+}
+
+const Utterances: React.FC<Props> = ({ issueTerm }) => {
   const [scheme] = useScheme()
   const router = useRouter()
 
@@ -19,7 +23,7 @@ const Utterances: React.FC = () => {
     script.setAttribute("src", "https://utteranc.es/client.js")
     script.setAttribute("crossorigin", "anonymous")
     script.setAttribute("async", `true`)
-    script.setAttribute("issue-term", "pathname")
+    script.setAttribute("issue-term", issueTerm)
     script.setAttribute("theme", theme)
     const config: Record<string, string> = CONFIG.utterances.config
     Object.keys(config).forEach((key) => {
