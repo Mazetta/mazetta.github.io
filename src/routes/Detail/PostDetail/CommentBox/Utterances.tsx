@@ -3,50 +3,34 @@ import { useEffect } from "react"
 import styled from "@emotion/styled"
 import useScheme from "src/hooks/useScheme"
 import { useRouter } from "next/router"
+import { useRef } from "react"
 
-//TODO: useRef?
+const [scheme] = useScheme()
+const theme = `github-${scheme}`
 
-type Props = {
-  issueTerm: string
-}
-
-const Utterances: React.FC<Props> = ({ issueTerm }) => {
-  const [scheme] = useScheme()
-  const router = useRouter()
-
+function Utterances() {
+  const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const theme = `github-${scheme}`
-    const script = document.createElement("script")
-    const anchor = document.getElementById("comments")
-    if (!anchor) return
+    const scriptElement = document.createElement('script');
+    scriptElement.async = true;
+    scriptElement.crossOrigin = 'anonymous';
+    scriptElement.src = 'https://utteranc.es/client.js';
 
-    script.setAttribute("src", "https://utteranc.es/client.js")
-    script.setAttribute("crossorigin", "anonymous")
-    script.setAttribute("async", `true`)
-    script.setAttribute("issue-term", issueTerm)
-    script.setAttribute("theme", theme)
-    const config: Record<string, string> = CONFIG.utterances.config
-    Object.keys(config).forEach((key) => {
-      script.setAttribute(key, config[key])
-    })
-    anchor.appendChild(script)
-    return () => {
-      anchor.innerHTML = ""
-    }
-  }, [scheme, router])
-  return (
-    <>
-      <StyledWrapper id="comments">
-        <div className="utterances-frame"></div>
-      </StyledWrapper>
-    </>
-  )
+    scriptElement.setAttribute('issue-term', 'pathname');
+    scriptElement.setAttribute('label', 'comment');
+    scriptElement.setAttribute(
+      'repo',
+      'Mazetta/mazeriio.net',
+    );
+    scriptElement.setAttribute(
+      'theme',
+      theme,
+    );
+
+    ref.current?.appendChild(scriptElement);
+  }, []);
+
+  return <div ref={ref} />;
 }
 
 export default Utterances
-
-const StyledWrapper = styled.div`
-  @media (min-width: 768px) {
-    margin-left: -4rem;
-  }
-`
