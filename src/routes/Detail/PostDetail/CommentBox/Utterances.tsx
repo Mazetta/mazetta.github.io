@@ -5,10 +5,11 @@ import useScheme from "src/hooks/useScheme"
 import { useRouter } from "next/router"
 import { useRef } from "react"
 
-const [scheme] = useScheme()
-const theme = `github-${scheme}`
+const Utterances: React.FC = () => {
 
-function Utterances() {
+  const [scheme] = useScheme()
+  const theme = `github-${scheme}`
+
   const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const scriptElement = document.createElement('script');
