@@ -120,7 +120,7 @@ const StyledWrapper = styled.div`
     }
 
     display: none;
-    overflow: scroll;
+    overflow: visible;
     top: ${HEADER_HEIGHT - 10}px;
 
     @media (min-width: 1024px) {
