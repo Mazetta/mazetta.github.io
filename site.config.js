@@ -3,8 +3,8 @@ const CONFIG = {
   profile: {
     name: "Mazeriio",
     image: "/mazeriio-logo.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Writer, sometimes.",
-    bio: "I love watching movies, shows and playing video games!",
+    role: "writer, sometimes.",
+    bio: "It's-a-me, Mazeriio! Welcome to my little corner of the internet.",
     rss: "https://www.mazeriio.net/api/rss.xml",
     email: "contact@mazeriio.net",
     bluesky: "@mazeriio.net",
