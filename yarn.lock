@@ -3651,13 +3651,6 @@ react-pdf@^5.7.1:
     tiny-invariant "^1.0.0"
     tiny-warning "^1.0.0"
 
-react-share-kit@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/react-share-kit/-/react-share-kit-1.1.0.tgz"
-  integrity sha512-aOOQr1wy7Qw74CDdajLj2Hv1+dzvuO4DGJwLX3YtvKEFrIK0cnt6bkzFzjDpvs2qQ9PMOPkMTqog2Apx947a6A==
-  dependencies:
-    jsonp "^0.2.1"
-
 react-share@^5.2.2:
   version "5.2.2"
   resolved "https://registry.npmjs.org/react-share/-/react-share-5.2.2.tgz"

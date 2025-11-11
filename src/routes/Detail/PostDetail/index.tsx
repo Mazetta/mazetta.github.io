@@ -16,7 +16,6 @@ import {
   ThreadsIcon,
   EmailIcon,
 } from "react-share"
-import { RedditShare } from "react-share-kit"
 
 type Props = {}
 
@@ -57,8 +56,6 @@ const PostDetail: React.FC<Props> = () => {
           <ThreadsShareButton url={postUrl} title={title}>
             <ThreadsIcon size={24} round />
           </ThreadsShareButton>
-
-          <RedditShare url={postUrl} title={title} size={24} round />
           
           <EmailShareButton url={postUrl} subject={title}>
             <EmailIcon size={24} round />
