@@ -97,6 +97,7 @@ const StyledTitle = styled.div`
   margin-bottom: 0.75rem;
 `
 const StyledWrapper = styled.div`
+  overflow: auto;
   display: flex;
   padding: 0.25rem;
   flex-direction: column;
