@@ -30,10 +30,18 @@ const PostDetail: React.FC<Props> = () => {
   const title = data.title || "The Word of Maz"
 
    const handleRedditShare = () => {
+    const width = 660
+    const height = 460
+    const left = window.innerWidth / 2 - width / 2
+    const top = window.innerHeight / 2 - height / 2
     const redditUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
       postUrl
     )}&title=${encodeURIComponent(title)}`
-    window.open(redditUrl, "_blank", "noopener,noreferrer")
+    window.open(
+      redditUrl,
+      "RedditShare",
+      `width=${width},height=${height},top=${top},left=${left},toolbar=0,location=0,menubar=0,scrollbars=1,resizable=1`
+    )
   }
 
   return (
@@ -66,7 +74,7 @@ const PostDetail: React.FC<Props> = () => {
           </ThreadsShareButton>
 
           <CustomRedditButton onClick={handleRedditShare}>
-            <RedditIcon size={32} round />
+            <RedditIcon size={24} round />
           </CustomRedditButton>
           
           <EmailShareButton url={postUrl} subject={title}>
