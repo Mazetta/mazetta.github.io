@@ -108,7 +108,7 @@ const CustomRedditButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  line-height: 0;test: 
+  align-items: center; 
 `
 
 const StyledWrapper = styled.div`
