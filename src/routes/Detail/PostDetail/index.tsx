@@ -14,6 +14,7 @@ import {
   BlueskyIcon,
   XIcon,
   ThreadsIcon,
+  RedditIcon,
   EmailIcon,
 } from "react-share"
 
@@ -27,6 +28,13 @@ const PostDetail: React.FC<Props> = () => {
   const category = (data.category && data.category?.[0]) || undefined
   const postUrl = `${typeof window !== "undefined" ? window.location.href : ""}`
   const title = data.title || "The Word of Maz"
+
+   const handleRedditShare = () => {
+    const redditUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(
+      postUrl
+    )}&title=${encodeURIComponent(title)}`
+    window.open(redditUrl, "_blank", "noopener,noreferrer")
+  }
 
   return (
     <StyledWrapper>
@@ -50,12 +58,16 @@ const PostDetail: React.FC<Props> = () => {
           </BlueskyShareButton>
 
           <TwitterShareButton url={postUrl} title={title}>
-            <XIcon size={24} round color="gray" />
+            <XIcon size={24} round />
           </TwitterShareButton>
 
           <ThreadsShareButton url={postUrl} title={title}>
             <ThreadsIcon size={24} round />
           </ThreadsShareButton>
+
+          <CustomRedditButton onClick={handleRedditShare}>
+            <RedditIcon size={32} round />
+          </CustomRedditButton>
           
           <EmailShareButton url={postUrl} subject={title}>
             <EmailIcon size={24} round />
@@ -81,6 +93,14 @@ const ShareSection = styled.div`
   gap: 0.5rem;
   margin: 1.5rem 0;
   align-items: center;
+`
+
+const CustomRedditButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;test: 
 `
 
 const StyledWrapper = styled.div`
