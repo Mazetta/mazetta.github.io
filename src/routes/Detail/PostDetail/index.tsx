@@ -10,6 +10,7 @@ import {
   BlueskyShareButton,
   TwitterShareButton,
   ThreadsShareButton,
+  RedditShareButton,
   EmailShareButton,
   BlueskyIcon,
   XIcon,
@@ -80,6 +81,10 @@ const PostDetail: React.FC<Props> = () => {
           <EmailShareButton url={postUrl} subject={title}>
             <EmailIcon size={24} round />
           </EmailShareButton>
+
+          <RedditShareButton url={postUrl} title={title}>
+            <RedditIcon size={24} round />
+          </RedditShareButton>
 
         </ShareSection>
 
