@@ -19,7 +19,7 @@ const PinnedPosts: React.FC<Props> = ({ q }) => {
       category: DEFAULT_CATEGORY,
       order: "desc",
     })
-    return baseFiltered.filter((post) => post.tags?.includes("Pinned"))
+    return baseFiltered.filter((post) => post.tags?.includes("📌"))
   }, [data, q])
 
   if (filteredPosts.length === 0) return null
