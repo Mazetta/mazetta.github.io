@@ -51,5 +51,5 @@ const StyledWrapper = styled.div`
   }
 
   .utterances-frame {
-    max-width: 100%;
+    max-height: 590px;
 `
