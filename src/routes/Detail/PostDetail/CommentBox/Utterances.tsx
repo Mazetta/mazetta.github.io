@@ -53,4 +53,8 @@ const StyledWrapper = styled.div`
   .utterances {
     height: 590px;
     overflow: visible;
+
+  .utterances-frame {
+    height: 590px;
+    overflow: visible;
 `
