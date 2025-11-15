@@ -49,4 +49,8 @@ const StyledWrapper = styled.div`
   @media (min-width: 768px) {
     margin-left: -4rem;
   }
+
+  .utterances-frame {
+    min-height: 594px;
+  
 `
