@@ -53,16 +53,16 @@ const StyledWrapper = styled.div`
   }
 
   .utterances-frame {
-    /* let the injected iframe determine its height so we don't create an artificial gap */
     min-height: 0;
     overflow: visible;
+    line-height: 0; /* Remove inline spacing */
   }
 
-  /* ensure the iframe can shrink/expand naturally and doesn't add extra space */
   .utterances-frame iframe {
     display: block;
     width: 100%;
     height: auto;
     min-height: 0;
+    border: none;
   }
 `
