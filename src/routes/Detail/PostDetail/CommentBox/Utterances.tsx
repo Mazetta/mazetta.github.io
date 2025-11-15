@@ -46,23 +46,7 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
 export default Utterances
 
 const StyledWrapper = styled.div`
-  margin-bottom: 0;
-
   @media (min-width: 768px) {
     margin-left: -4rem;
-  }
-
-  .utterances-frame {
-    min-height: 0;
-    overflow: visible;
-    line-height: 0; /* Remove inline spacing */
-  }
-
-  .utterances-frame iframe {
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    border: none;
   }
 `
