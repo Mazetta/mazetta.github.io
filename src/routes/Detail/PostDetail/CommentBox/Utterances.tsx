@@ -52,5 +52,5 @@ const StyledWrapper = styled.div`
 
   .utterances-frame {
     min-height: 594px;
-  
+  }
 `
